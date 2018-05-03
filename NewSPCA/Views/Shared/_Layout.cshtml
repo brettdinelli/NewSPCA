@@ -38,8 +38,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Programs">Programs & Services</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Adoptions">Adoptions</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contribute">Contribute</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
@@ -59,35 +61,11 @@
         @RenderBody()
     </section>
 
-    <footer>
-        <div class="container">
+    @*<footer>*@
+    @*<div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="widget">
-                        <h5>Contact Us</h5>
-                        <address>
-                            <strong>Greater Moncton SPCA</strong><br>
-                            116 Greenock St.<br>
-                            Moncton, NB  E1H 2J7
-                        </address>
-                        <p>
-                            <i class="fas fa-phone"></i> (506) 857-8698<br>
-                            @*<i class="fas fa-envelope"></i> inquire@contosou.com*@
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="widget">
-                        <h5>Quick Links</h5>
-                        <ul class="link-list">
-                            <li><a href="#">Latest Events</a></li>
-                            <li><a href="#">Terms and conditions</a></li>
-                            <li><a href="#">Privacy policy</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Contact us</a></li>
-                        </ul>
-                    </div>
-                </div>
+               
+                
                 <div class="col-lg-4">
                     <div class="widget">
                         <h5>Recent News</h5>
@@ -100,64 +78,88 @@
 
                 </div>
             </div>
-        </div>
-        <div id="sub-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <div class="copyright">
-                            <p>
-                                <span>&copy;@DateTime.Now.Year - Greater Moncton SPCA</span>
-                            </p>
-                        </div>
+        </div>*@
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                    <div class="widget">
+                        <h5>Contact Us</h5>
+                        <address>
+                            <strong>Greater Moncton SPCA</strong><br>
+                            116 Greenock St.<br>
+                            Moncton, NB  E1H 2J7
+                        </address>
+                        <p>
+                            <i class="fas fa-phone"></i> (506) 857-8698<br>
+                            <i class="fas fa-envelope"></i> info@monctonspca.ca
+                        </p>
                     </div>
-                    <div class="col-md-6">
-                        <ul class="social-network">
+                </div>
+                <div class="col-sm-3">
+                    <div class="widget">
+                        <h5>Visit Us</h5>
+                        <ul class="link-list">
+                            <li><b>Monday to Friday:</b> 10am to 7pm</li>
+                            <li><b>Saturday and Sunday:</b> 12pm to 4pm</li>
+                        </ul>
+                        <br>
+                        <ul class="social-network text-left">
                             <li><a href="#" data-toggle="tooltip" title="Find us on Facebook"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#" data-toggle="tooltip" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#" data-toggle="tooltip" title="Connect with us on Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
                             <li><a href="#" data-toggle="tooltip" title="Find us on Instagram"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#" data-toggle="tooltip" title="Follow us on Google Plus"><i class="fab fa-google-plus-g"></i></a></li>
                         </ul>
                     </div>
                 </div>
+                <div class="col-sm-3"></div>
+            </div>
+        </div>
+
+        <div id="sub-footer">
+            <div class="copyright">
+                <p>
+                    <span>&copy;@DateTime.Now.Year - Greater Moncton SPCA</span>
+                </p>
             </div>
         </div>
     </footer>
+        
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        @* brettdinelli: update to bootstrap 4 - requires popper.js *@
-        <script src="~/lib/popper.js/dist/umd/popper.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
-        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-                integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-                crossorigin="anonymous"
-                asp-fallback-src="~/lib/popper.js/dist/popper.min.js"
-                asp-fallback-test="window.Popper">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-                integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-                crossorigin="anonymous"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-        </script>
-        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+<environment include="Development">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    @* brettdinelli: update to bootstrap 4 - requires popper.js *@
+    <script src="~/lib/popper.js/dist/umd/popper.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</environment>
+<environment exclude="Development">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery"
+            crossorigin="anonymous"
+            integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"
+            asp-fallback-src="~/lib/popper.js/dist/popper.min.js"
+            asp-fallback-test="window.Popper">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"
+            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+    </script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
+</environment>
 
-    @RenderSection("Scripts", required: false)
+@RenderSection("Scripts", required: false)
 </body>
 </html>
