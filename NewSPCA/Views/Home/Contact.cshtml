@@ -1,17 +1,28 @@
-﻿@{
-    ViewData["Title"] = "Contact";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿<div class="container">
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+    @{
+        ViewData["Title"] = "Contact";
+    }
+    <h2>@ViewData["Title"]</h2>
+    
+    <h3>Mailing Address</h3>
+
+    <address>
+        116 Greenock Street, <br />
+        Moncton, NB <br />
+        E1H 2J7 <br />
+
+        <abbr title="Phone">P:</abbr>
+        (506) 857-8698
+    </address>
+
+    <h3>Email Address</h3>
+
+    <address>
+        <strong>General Inquiries:</strong> <a href="mailto:info@monctonspca.ca">info@monctonspca.ca</a><br />
+        <strong>Executive Director:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>
+
+</div>

@@ -17,7 +17,7 @@ namespace NewSPCA.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Learn more about the Greater Moncton SPCA";
 
             return View();
         }
