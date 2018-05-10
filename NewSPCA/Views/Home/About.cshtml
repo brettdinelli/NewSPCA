@@ -1,7 +1,64 @@
-﻿@{
-    ViewData["Title"] = "About";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿<div class="container my-4">
 
-<p>Use this area to provide additional information.</p>
+    @{
+        ViewData["Title"] = "About";
+    }
+
+    <h2>@ViewData["Title"]</h2>
+
+    <p>
+        The Greater Moncton SPCA is the largest animal shelter east of Montreal and takes in over 3,500 animals every year.
+        Please, open your heart and your home to a pet in need!
+    </p>
+    <img class="img-responsive img-thumbnail" src="~/SPCAImages/image.jpg" />
+    <h3>The Greater Moncton SPCA Mission Statement:</h3>
+    <blockquote>
+        To promote animal care and prevent animal cruelty through sheltering, placement and education.
+    </blockquote>
+    <h3>Our History</h3>
+    <p>The Moncton Society for Prevention of Cruelty to Animals (SPCA) was formed in 1955 by a small group of concerned citizens (headed by Mrs. Constance Hoover), who thought something should be done about the stray animals and cruelty in this area. The Society was incorporated as SPCA (Moncton) Inc. in 1956 with the first shelter being opened by the premier of the day, the Hon. Hugh John Flemming.</p>
+    <p>The shelter was built by Mrs. Hoover and her mother. They added to the building over the years to house the ever increasing number of animals. For many years, Mrs. Hoover ran the organization with the help of a few very dear friends, mainly Mr. and Mrs. Sternbach and Mrs. Rena Michahelles. During the early years the work was done on a volunteer basis. As funds became available, staff was hired. The Greater Moncton SPCA shelter building is known as the Hoover Animal Shelter, in recognition of the many years of dedicated service given by Mrs. Hoover.</p>
+    <p>The GMSPCA now has the task of providing a service under the Animal Protection Act which is not duplicated by any other agency in the Greater Moncton area. The Society provides care for sick, injured, homeless, lost and unwanted animals.</p>
+    <p>The GMSPCA continues to work for the animals with the aim of preventing and suppressing cruelty. Cruelty takes many forms ranging from blatant physical abuse to neglect; from misuse in entertainment to trapping and factory farming. The board of directors of the GMSPCA developed a mission statement to help us focus our efforts and be most effective.</p>
+
+    <h3>Board of Directors</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <ul>
+                <li>President, Natasha Ostaff</li>
+                <li>First Vice-President, Tara McKee</li>
+                <li>Second Vice-President, Tom Badger</li>
+                <li>Treasurer, Bruno Godin</li>
+                <li>Secretary, Gina Myers</li>
+                <li>Executive Director, Dave Rogers</li>
+                <li>Past President, Marcia McDonough</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul>
+                <li>Alisha Armour</li>
+                <li>Susy Campos</li>
+                <li>Chris Farmer</li>
+                <li>Karen Rawlines</li>
+                <li>Heather Russell</li>
+                <li>Steve Thompson</li>
+            </ul>
+        </div>
+    </div>
+    
+        <h3 class="text-center">Our Sponsors</h3>
+        <div class="col-md-3">
+            <img src="~/SPCAImages/goodguys-logo.png" />
+        </div>
+        <div class="col-md-3">
+            <img src="~/SPCAImages/c103-logo.png" />
+        </div>
+        <div class="col-md-3">
+            <img src="~/SPCAImages/greco-logo.png" />
+        </div>
+        <div class="col-md-3">
+            <img src="~/SPCAImages/iams-logo.png" />
+        </div>
+        <h4 class="text-center">To sponsor the GMSPCA please contact us for details.</h4>
+
+</div>
