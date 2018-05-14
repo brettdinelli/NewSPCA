@@ -15,9 +15,6 @@ namespace NewSPCA.Data
             {
                 return;     // db has been seeded
             }
-
-            
-
             // breeds
             var breeds = new Breed[]
             {
@@ -25,47 +22,45 @@ namespace NewSPCA.Data
                 {
                     Breed_Name = "Terrier"
                 },
-
                 new Breed
                 {
                     Breed_Name = "Mixed"
                 },
-
                 new Breed
                 {
                     Breed_Name = "Retriever"
                 },
-
                 new Breed
                 {
                     Breed_Name = "Labrador"
                 },
-
                 new Breed
                 {
                     Breed_Name = "Poodle"
                 },
-
                 new Breed
                 {
                     Breed_Name = "Great Pyrenees"
                 },
-
                 new Breed
                 {
                     Breed_Name = "Domestic Short Hair"
                 },
-
                 new Breed
                 {
                     Breed_Name = "Domestic Medium Hair"
                 },
-
                 new Breed
                 {
                     Breed_Name = "Domestic Long Hair"
                 }
             };
+
+            foreach(Breed b in breeds)
+            {
+                context.Breeds.Add(b);
+            }
+            context.SaveChanges();
 
             // sites
             var sites = new Site[]
@@ -78,7 +73,6 @@ namespace NewSPCA.Data
                     PostalCode = "E1H 2J7",
                     Province = "NB"
                 },
-
                 new Site
                 {
                     Site_Name = "Saint John SPCA Animal Rescue",
@@ -87,7 +81,6 @@ namespace NewSPCA.Data
                     PostalCode = "E2J 1B1",
                     Province = "NB"
                 },
-
                 new Site
                 {
                     Site_Name = "Grey Cove Veterinary Health Centre",
@@ -111,17 +104,14 @@ namespace NewSPCA.Data
                 {
                     Species_Name = "Dog"
                 },
-
                 new Species
                 {
                     Species_Name = "Cat"
                 },
-
                 new Species
                 {
                     Species_Name = "Reptile"
                 },
-
                 new Species
                 {
                     Species_Name = "Small-Furry"
@@ -153,7 +143,6 @@ namespace NewSPCA.Data
                     Intake_Date = DateTime.Parse("2017-11-05"),
                     Price = 235.00m
                 },
-
                 new Animal
                 {
                     Name = "Fergus",
@@ -170,7 +159,6 @@ namespace NewSPCA.Data
                     Intake_Date = DateTime.Parse("2018-05-02"),
                     Price = 99.00m
                 }
-
             };
 
             foreach(Animal a in animals)

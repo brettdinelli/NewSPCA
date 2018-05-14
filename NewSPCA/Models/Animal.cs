@@ -48,18 +48,23 @@ namespace NewSPCA.Models
 
         public Declawed Declawed { get; set; }
 
+        [Display(Name = "Housetrained")]
         public Housebroken Housebroken { get; set; }
         
+        [Display(Name = "Spayed/Neutered")]
         public Spayed_Neutered Spayed_Neutered { get; set; }
 
         // foreign keys
         [Required]
+        [Display(Name = "Species")]
         public int SpeciesID { get; set; }     // FK for the Species class/table
 
         [Required]
+        [Display(Name = "Breed")]
         public int BreedID { get; set; }       // FK for the Breed class/table - one breed, many animals
 
         [Required]
+        [Display(Name = "Location")]
         public int SiteID { get; set; }        // FK for the Site class/table
 
         public virtual Species Species { get; set; }
