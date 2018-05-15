@@ -1,12 +1,12 @@
 ﻿@model NewSPCA.Models.Animal
-
+<div class="container marginBottom">
 @{
     ViewData["Title"] = "Create";
 }
 
 <h2>Create</h2>
 
-<h4>Animal</h4>
+<h3>Animal</h3>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -81,7 +81,7 @@
                 <select asp-for="SiteID" class ="form-control" asp-items="ViewBag.SiteID"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </form>
     </div>
@@ -91,6 +91,7 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
