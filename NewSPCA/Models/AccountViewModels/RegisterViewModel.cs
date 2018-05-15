@@ -23,5 +23,34 @@ namespace NewSPCA.Models.AccountViewModels
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        //brettdinelli - add custom properties
+        [Required]
+        [StringLength(50)]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(65)]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [StringLength(150)]
+        public string Address { get; set; }
+
+        [Required]
+        [StringLength(60)]
+        public string City { get; set; }
+
+        [Required]
+        [StringLength(7)]
+        [DataType(DataType.PostalCode)]
+        [Display(Name = "Postal Code")]
+        public string PostalCode { get; set; }
+
+        [Required]
+        [StringLength(2)]
+        public string Province { get; set; }
     }
 }
