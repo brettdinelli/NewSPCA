@@ -61,7 +61,13 @@ namespace NewSPCA.Controllers
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,
-                StatusMessage = StatusMessage
+                StatusMessage = StatusMessage,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Address = user.Address,
+                City = user.City, 
+                Province = user.Province,
+                PostalCode = user.PostalCode
             };
 
             return View(model);
@@ -100,6 +106,19 @@ namespace NewSPCA.Controllers
                 {
                     throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
                 }
+            }
+
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            user.Address = model.Address;
+            user.City = model.City;
+            user.Province = model.Province;
+            user.PostalCode = model.PostalCode;
+
+            var customUpdateResult = await _userManager.UpdateAsync(user);
+            if(!customUpdateResult.Succeeded)
+            {
+                throw new ApplicationException($"An unexpected error occurred setting the custom properties for the user with ID '{user.Id}'.");
             }
 
             StatusMessage = "Your profile has been updated";

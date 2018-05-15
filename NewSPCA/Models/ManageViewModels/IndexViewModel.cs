@@ -21,5 +21,31 @@ namespace NewSPCA.Models.ManageViewModels
         public string PhoneNumber { get; set; }
 
         public string StatusMessage { get; set; }
+
+        //dboudreau: add custom properties
+        [Required]
+        [StringLength(50)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(65)]
+        public string LastName { get; set; }
+
+        [Required]
+        [StringLength(150)]
+        public string Address { get; set; }
+
+        [Required]
+        [StringLength(60)]
+        public string City { get; set; }
+
+        [Required]
+        [StringLength(7)]
+        [DataType(DataType.PostalCode)]
+        public string PostalCode { get; set; }
+
+        [Required]
+        [StringLength(2)]
+        public string Province { get; set; }
     }
 }
