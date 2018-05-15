@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<NewSPCA.Models.Site>
-
+<div class="container marginBottom">
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Sites</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -49,11 +49,12 @@
                 @Html.DisplayFor(modelItem => item.Province)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.SiteID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SiteID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SiteID">Delete</a>
+                <a class="ico-success" title="Edit Site" asp-action="Edit" asp-route-id="@item.SiteID"><i class="fas fa-edit"></i></a>
+                <a class="ico-info" title="Site Details" asp-action="Details" asp-route-id="@item.SiteID"><i class="fas fa-search-plus"></i></a>
+                <a class="ico-danger" title="Delete Site" asp-action="Delete" asp-route-id="@item.SiteID"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+    </div>

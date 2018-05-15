@@ -1,35 +1,38 @@
 ﻿@model IEnumerable<NewSPCA.Models.Breed>
 
-@{
-    ViewData["Title"] = "Index";
-}
+<div class="container marginBottom">
+    @{
+        ViewData["Title"] = "Index";
+    }
 
-<h2>Index</h2>
+    <h2>Breed</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Breed_Name)
                 </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Breed_Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.BreedID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BreedID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BreedID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Breed_Name)
+                    </td>
+                    <td>
+                        <a class="ico-success" title="Edit Breed" asp-action="Edit" asp-route-id="@item.BreedID"><i class="fas fa-edit"></i></a>
+                        <a class="ico-info" title="Breed Details" asp-action="Details" asp-route-id="@item.BreedID"><i class="fas fa-search-plus"></i></a>
+                        <a class="ico-danger" title="Delete Breed" asp-action="Delete" asp-route-id="@item.BreedID"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
