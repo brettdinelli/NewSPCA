@@ -1,0 +1,32 @@
+﻿@model IEnumerable<NewSPCA.Models.Animal>
+@{
+    ViewData["Title"] = "Adoptable Dogs";
+}
+
+<div class="container marginBottom">
+    <h2>Adoptable Dogs</h2>
+
+    @if(Model.Count() == 0)
+    { 
+        <div class="alert alert-info">
+            There are no adoptable dogs. Please check back soon!
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach(var item in Model)
+            {
+                <div class="col-md-4">
+                    <h3 class="bg-primary">@item.Name</h3>
+                </div>
+
+            }
+        </div>
+
+    }
+
+</div>
+
+
+

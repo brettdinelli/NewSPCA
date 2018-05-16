@@ -26,6 +26,25 @@ namespace NewSPCA.Controllers
             return View(await animalContext.ToListAsync());
         }
 
+        public async Task<IActionResult> Listing(int? speciesId)
+        {
+            var animals = _context.Animals.Where(a => a.SpeciesID == speciesId);
+
+            if(speciesId != null)
+            {
+                // we have a species ID
+                var speciesType = _context.Species.Where(s => s.SpeciesID == speciesId).SingleOrDefault();
+                ViewData["SpeciesType"] = speciesType.Species_Name;
+            }
+            else
+            {
+                // no species ID / all species
+                ViewData["SpeciesType"] = "All Species";
+            }
+
+            return View(await animals.ToListAsync());
+        }
+
         // GET: Animal/Details/5
         public async Task<IActionResult> Details(int? id)
         {

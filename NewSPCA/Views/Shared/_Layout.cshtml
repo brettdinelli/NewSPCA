@@ -28,7 +28,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -40,7 +40,11 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Programs">Programs & Services</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Adoptions">Adoptions</a></li>
+                    <li><a class=" dropdown-toggle" data-toggle="dropdown" asp-controller="Home" asp-action="Adoptions">Adoptions</a>
+                    <ul class="dropdown-menu">
+                        <li><a asp-area="" asp-controller="Animal" asp-action="AdoptableDogs">Adoptable Dogs</a></li>
+                        <li><a asp-area="" asp-controller="Animal" asp-action="AdoptableCats">Adoptable Cats</a></li>
+                        <li><a asp-area="" asp-controller="Animal" asp-action="AdoptableOthers">Adoptable Others</a></li></ul></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contribute">Contribute</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
@@ -48,37 +52,12 @@
             </div>
         </div>
     </nav>
-    @*<div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; 2018 - SPCA</p>
-            </footer>
-        </div>*@
 
     @*  brettdinelli:  rename main content and move footer outside *@
     <section class="margin">
         @RenderBody()
     </section>
 
-    @*<footer>*@
-    @*<div class="container">
-            <div class="row">
-               
-                
-                <div class="col-lg-4">
-                    <div class="widget">
-                        <h5>Recent News</h5>
-                        <ul class="link-list">
-                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                            <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-                            <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </div>*@
     <footer>
         <div class="container">
             <div class="row">
