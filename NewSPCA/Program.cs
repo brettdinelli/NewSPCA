@@ -24,6 +24,7 @@ namespace NewSPCA
                 var services = scope.ServiceProvider;
                 try
                 {
+                    IdentityDbInitializer.Initialize(services).Wait();
                     var context = services.GetRequiredService<AnimalContext>();
                     //DbInitializer.Initialize(context);
                 }
