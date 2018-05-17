@@ -10,6 +10,7 @@ using NewSPCA.Models;
 
 namespace NewSPCA.Controllers
 {
+    //[Authorize(Roles = "admin")]
     public class AnimalController : Controller
     {
         private readonly AnimalContext _context;
@@ -26,20 +27,27 @@ namespace NewSPCA.Controllers
             return View(await animalContext.ToListAsync());
         }
 
+        //[AllowAnonymous]
         public async Task<IActionResult> Listing(int? speciesId)
         {
-            var animals = _context.Animals.Where(a => a.SpeciesID == speciesId);
+            var animals = _context.Animals
+                .Include(i => i.Species)
+                .Include(i => i.Breed)
+                .Include(i => i.Site)
+                .Where(a => !speciesId.HasValue || a.SpeciesID == speciesId);
 
             if(speciesId != null)
             {
                 // we have a species ID
-                var speciesType = _context.Species.Where(s => s.SpeciesID == speciesId).SingleOrDefault();
+                var speciesType = _context.Species
+                    .Where(s => s.SpeciesID == speciesId)
+                    .SingleOrDefault();
                 ViewData["SpeciesType"] = speciesType.Species_Name;
             }
             else
             {
                 // no species ID / all species
-                ViewData["SpeciesType"] = "All Species";
+                ViewData["SpeciesType"] = "All Specie";
             }
 
             return View(await animals.ToListAsync());

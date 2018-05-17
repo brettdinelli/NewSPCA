@@ -39,13 +39,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Programs">Programs & Services</a></li>
-                    <li><a class=" dropdown-toggle" data-toggle="dropdown" asp-controller="Home" asp-action="Adoptions">Adoptions</a>
-                    <ul class="dropdown-menu">
-                        <li><a asp-area="" asp-controller="Animal" asp-action="AdoptableDogs">Adoptable Dogs</a></li>
-                        <li><a asp-area="" asp-controller="Animal" asp-action="AdoptableCats">Adoptable Cats</a></li>
-                        <li><a asp-area="" asp-controller="Animal" asp-action="AdoptableOthers">Adoptable Others</a></li></ul></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contribute">Contribute</a></li>
+                   @await  Component.InvokeAsync("MenuComponent")
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
