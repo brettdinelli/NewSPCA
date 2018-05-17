@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ using NewSPCA.Models;
 
 namespace NewSPCA.Controllers
 {
-    //[Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public class AnimalController : Controller
     {
         private readonly AnimalContext _context;
@@ -20,6 +21,7 @@ namespace NewSPCA.Controllers
             _context = context;
         }
 
+        [AllowAnonymous]
         // GET: Animal
         public async Task<IActionResult> Index()
         {
@@ -27,7 +29,7 @@ namespace NewSPCA.Controllers
             return View(await animalContext.ToListAsync());
         }
 
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public async Task<IActionResult> Listing(int? speciesId)
         {
             var animals = _context.Animals
@@ -53,6 +55,7 @@ namespace NewSPCA.Controllers
             return View(await animals.ToListAsync());
         }
 
+        [AllowAnonymous]
         // GET: Animal/Details/5
         public async Task<IActionResult> Details(int? id)
         {
