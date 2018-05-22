@@ -6,7 +6,6 @@
 
 <div class="container marginBottom">
     <h2>Adoptable @ViewData["SpeciesType"]s</h2>
-    @*<h2>Adoptable Animals</h2>*@
 
     @if(Model.Count() == 0)
     { 
@@ -16,43 +15,34 @@
     }
     else
     {
-        <div class="row">
-            @foreach(var item in Model)
-            {
-                <div class="col-md-4">
-                    <h3 class="bg-primary text-center">@item.Name</h3>
-                    <div style="border:1px solid; padding:.2em;">
-                        <img class="center-block" src="http://via.placeholder.com/300x150">
-                        <div style="padding-left: 20px;">
-                            <p><b>Species:</b> @Html.DisplayFor(m => item.Species.Species_Name)</p>
-                            <p><b>Age:</b> @Html.DisplayFor(m => item.Age)</p>
-                            <p><b>Gender:</b> @Html.DisplayFor(m => item.Gender)</p>
-                            <p><b>Breed:</b> @Html.DisplayFor(m => item.Breed.Breed_Name)</p>
-                            <p><b>Size:</b> @Html.DisplayFor(m => item.Size)</p>
-                            <p><b>Color:</b> @Html.DisplayFor(m => item.Color)</p>
-                            <p><b>Price:</b> @Html.DisplayFor(m => item.Price)</p>
-                            <p><b>Declawed:</b> @Html.DisplayFor(m => item.Declawed)</p>
-                            <p><b>Housetrained:</b> @Html.DisplayFor(m => item.Housebroken)</p>
-                            <p><b>Spayed/Neutered:</b> @Html.DisplayFor(m => item.Spayed_Neutered)</p>
-                            <p><b>Intake Date:</b> @Html.DisplayFor(m => item.Intake_Date)</p>
-                            <p><b>Site:</b> @Html.DisplayFor(m => item.Site.Site_Name)</p>
-                            <p>
-                                @if (User.IsInRole("admin"))
+    <div class="row">
+        @foreach (var item in Model)
         {
-            // user must be logged in as admin
-                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.SpeciesID">Edit</a>
-                        <a class="btn btn-success" asp-action="Delete" asp-route-id="@item.SpeciesID">Delete</a>
-}
-                            </p>
-                        </div>
-                    </div>
+        <div class="col-md-4">
+            <h3 class="bg-primary text-center">@item.Name</h3>
+            <div style="padding:.2em;">
+                <img class="center-block img-responsive img-thumbnail" src="~/images/@(item.ID).jpg" alt="@item.Name" />
+                <div style="padding-left: 20px;">
+                    <p><b>Species:</b> @Html.DisplayFor(m => item.Species.Species_Name)</p>
+                    <p><b>Age:</b> @Html.DisplayFor(m => item.Age)</p>
+                    <p><b>Gender:</b> @Html.DisplayFor(m => item.Gender)</p>
+                    <p><b>Breed:</b> @Html.DisplayFor(m => item.Breed.Breed_Name)</p>
+                    <p><b>Size:</b> @Html.DisplayFor(m => item.Size)</p>
+                    <p><b>Color:</b> @Html.DisplayFor(m => item.Color)</p>
+                    <p><b>Price:</b> @Html.DisplayFor(m => item.Price)</p>
+                    <p><b>Declawed:</b> @Html.DisplayFor(m => item.Declawed)</p>
+                    <p><b>Housetrained:</b> @Html.DisplayFor(m => item.Housebroken)</p>
+                    <p><b>Spayed/Neutered:</b> @Html.DisplayFor(m => item.Spayed_Neutered)</p>
+                    <p><b>Intake Date:</b> @Html.DisplayFor(m => item.Intake_Date)</p>
+                    <p><b>Site:</b> @Html.DisplayFor(m => item.Site.Site_Name)</p>
+                    <p>
+                    </p>
                 </div>
-                
-                    
-
-            }
+            </div>
         </div>
 
+        }
+    </div>
     }
 
 </div>
