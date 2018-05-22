@@ -40,8 +40,8 @@
                                 @if (User.IsInRole("admin"))
         {
             // user must be logged in as admin
-                        <a class="btn btn-default" asp-action="Edit" asp-route-id="@item.SpeciesID">Edit</a>
-                        <a class="btn btn-default" asp-action="Delete" asp-route-id="@item.SpeciesID">Delete</a>
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.SpeciesID">Edit</a>
+                        <a class="btn btn-success" asp-action="Delete" asp-route-id="@item.SpeciesID">Delete</a>
 }
                             </p>
                         </div>
